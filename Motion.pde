@@ -39,7 +39,6 @@ void draw() {
   prev.loadPixels();
   image(video, 0, 0);
 
-  //threshold = map(mouseX, 0, width, 0, 100);
   threshold = 50;
 
 
@@ -65,16 +64,15 @@ void draw() {
 
       float d = distSq(r1, g1, b1, r2, g2, b2); 
 
+      // edit here
+      
       if (d > threshold*threshold) {
-        //stroke(255);
-        //strokeWeight(1);
-        //point(x, y);
         avgX += x;
         avgY += y;
         count++;
-        pixels[loc] = color(255);
-      } else {
         pixels[loc] = color(0);
+      } else {
+        pixels[loc] = currentColor;
       }
     }
   }
@@ -96,10 +94,6 @@ void draw() {
   stroke(0);
   ellipse(lerpX, lerpY, 36, 36);
 
-  //image(video, 0, 0, 100, 100);
-  //image(prev, 100, 0, 100, 100);
-
-  //println(mouseX, threshold);
 }
 
 float distSq(float x1, float y1, float z1, float x2, float y2, float z2) {
