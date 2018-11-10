@@ -26,6 +26,7 @@ void setup() {
 
 
 void mousePressed() {
+  // take snapshot of the background
 }
 
 void captureEvent(Capture video) {
@@ -39,7 +40,7 @@ void draw() {
   prev.loadPixels();
   image(video, 0, 0);
 
-  threshold = 50;
+  threshold = 100;
 
 
   int count = 0;
